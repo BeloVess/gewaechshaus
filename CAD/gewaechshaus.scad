@@ -104,7 +104,7 @@ color("Red") {
         $fn=10)
     circle(0.2);
 }
-color("Red"){
+color("Black"){
     translate([45, 8, 48])
     rotate([90, 0, 180])
     linear_extrude(height = 0.2)
