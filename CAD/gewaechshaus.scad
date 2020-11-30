@@ -1,120 +1,58 @@
-color("DarkGray")
-cube([100,100,1]);
-color("DarkSlateGray");
-cube([1,1,50]);
-translate([99, 0, 0])
-cube([1,1,50]);
-translate([0, 99, 0])
-cube([1,1,50]);
-translate([99, 99, 0])
-cube([1,1,50]);
-translate([0, 0, 49])
-cube([100,1,1]);
-translate([99, 0, 49])
-cube([1,100,1]);
-translate([0, 99, 49])
-cube([100,1,1]);
-translate([0, 0, 49])
-cube([1,100,1]);
+use <box.scad>
+use <pipe.scad>
+use <modules.scad>
+use <connector.scad>
+use <tree.scad>
+
+box();
+
 translate([7, 7, 15])
-color("SkyBlue")
-cylinder(h=30, r=5, $fn=200);
+boiler(30, 5);
+translate([5, 5, 50])
+connector("Red", 30, 2, 0.2);
+
 translate([20, 0, 0])
-color("MediumSpringGreen"){
-    translate([7, -2, 30])
-    linear_extrude(
-        height=20,
-        slices=100,
-        twist=240, 
-        $fn=10)
-    circle(0.5);
-    translate([5, 2, 50])
-    rotate([90, 0, 90])
-    rotate_extrude(
-        angle=180,
-        $fn=20
-    )
-    translate([4, 2, 0])
-    circle(0.5);
-    translate([9, -6, 30])
-    rotate([-90, 0, 90])
-    rotate_extrude(
-        angle=90,
-        $fn=20
-    )
-    translate([4, 2, 0])
-    circle(0.5);
-    translate([7, -6, 26])
-    rotate([90, 0, 0])
-    linear_extrude(
-        height=30,
-        slices=100,
-        twist=240, 
-        $fn=10)
-    circle(0.5);
-    translate([7, 6, 45])
-    linear_extrude(
-        height=5,
-        slices=100,
-        twist=240, 
-        $fn=10)
-    circle(0.5);
-}
-color("Plum")
-translate([4, 6, 45])
-cube([1, 1, 5]);
-color("DarkKhaki")
+pipe();
+
 translate([25, 4, 40])
-cube([10, 4, 10]);
-color("MediumSpringGreen")
-translate([12, 7, 42])
-rotate([90, 0, 90])
-linear_extrude(
-    height=15,
-    slices=100,
-    twist=240, 
-    $fn=10)
-circle(0.5);
-color("MediumTurquoise")
+mod("DarkKhaki", "Насос");
+translate([33, 6, 50])
+connector("Green", 2, 2, 0.2);
+
 translate([37, 4, 40])
-cube([10, 4, 10]);
-color("Red") {
-    translate([35, 6.5, 50])
-    rotate([90, 0, 0])
-    rotate_extrude(
-        angle=90,
-        $fn=20
-    )
-    translate([10, 0, 0])
-    circle(0.2);
-    translate([14.5, 6.5, 50])
-    rotate([0, -90, 90])
-    rotate_extrude(
-        angle=90,
-        $fn=20
-    )
-    translate([10, 0, 0])
-    circle(0.2);
-    translate([14.5, 6.5, 60])
-    rotate([90, 0, 90])
-    linear_extrude(
-        height=21,
-        slices=100,
-        twist=240, 
-        $fn=10)
-    circle(0.2);
+mod("MediumTurquoise", "Arduino");
+rotate([0, 0, 90])
+translate([7, -44, 50])
+connector("Maroon", 35, 2, 0.2);
+translate([44, 46, 17])
+color("Maroon")
+cylinder(r=0.2, h=33);
+
+translate([49, 4, 10])
+mod("MediumTurquoise", "Кран");
+translate([45, 5, 50])
+connector("Blue", 3, 2, 0.2);
+translate([52, 5, 20])
+color("Blue")
+cylinder(r=0.2, h=30);
+
+translate([61, 4, 40])
+mod("MediumTurquoise", "Питание");
+translate([45, 7, 50])
+connector("Black", 13, 2, 0.2);
+
+translate([12, 7, 17])
+l_pipe(37);
+translate([12, 7, 42])
+l_pipe(15);
+rotate([0, 0, 90])
+translate([8, -52, 12])
+l_pipe(37);
+translate([47, 49, 1]) {
+    pot(11, 16);
+    translate([0, 0, 10])
+    simple_tree(11, 4);
 }
-color("Black"){
-    translate([45, 8, 48])
-    rotate([90, 0, 180])
-    linear_extrude(height = 0.2)
-    text("Arduino", 1);
-    translate([15, 8, 48])
-    rotate([90, 0, 180])
-    linear_extrude(height = 0.2)
-    text("Датчик уровня", 1);
-    translate([30, 8, 48])
-    rotate([90, 0, 180])
-    linear_extrude(height = 0.2)
-    text("Насос", 1);
-}
+
+
+
