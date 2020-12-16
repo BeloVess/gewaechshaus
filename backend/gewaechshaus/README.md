@@ -33,3 +33,14 @@ mysql> quit
 From Elementary OS:
 
 `sudo mysql -u root -p`
+
+# API request for add measure
+
+```
+{
+  "measured_at": 1608151508,
+  "sensor_id": 1,
+  "isActive": true,
+  "value": 7
+}
+```
