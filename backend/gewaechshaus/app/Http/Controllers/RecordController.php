@@ -15,7 +15,7 @@ class RecordController extends Controller
      */
     public function index()
     {
-        return Record::all();
+        return Record::all()->take(20);
     }
 
     /**
