@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Set comment"
+else
+    git add .
+    git commit -m "$(echo $@)"
+    git push origin main
+    git push gitlab main
+fi
