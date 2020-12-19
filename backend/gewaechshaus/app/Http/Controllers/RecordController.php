@@ -15,7 +15,8 @@ class RecordController extends Controller
      */
     public function index()
     {
-        return Record::all()->take(20);
+        return Record::all()->splice(-20);
+        //return Record::all()->sortByDesc('measured_at')->take(20);
     }
 
     /**
