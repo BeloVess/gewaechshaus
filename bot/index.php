@@ -20,7 +20,6 @@ if ($update && is_array($update) && array_key_exists("project", $update)) {
     #error_log($time);
     #error_log($url);
 
-    $chatId = "-494171586";
     $path = "https://api.telegram.org/bot";
 
     $params = [
