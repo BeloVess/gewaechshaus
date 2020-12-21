@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh root@belowess.ru 'rsync -av /root/backup/ /root/backup_old'
+rsync -av --delete files/ root@belowess.ru:/root/backup

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/helga/backup/
+rm -rf files/*
+unzip БелоВесь* -d files
