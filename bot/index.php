@@ -2,6 +2,8 @@
 $update = json_decode(file_get_contents("php://input"), TRUE);
 #error_log(print_r($update, TRUE));
 
+# TODO: check password from gitlab
+
 $config = parse_ini_file("bot.ini");
 #error_log(print_r($config, TRUE));
 $chatId = $config["chatid"];
