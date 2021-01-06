@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Cvlt Rvne Demo";
+    src: url(/fonts/CvltRvneDemoBold-9Rp7.ttf);
+}
+
+p {
+    font-family: "Cvlt Rvne Demo";
+}
+
+.logo {
+    display: block;
+    /*text-indent: -9999px;*/
+    width: 1000px;
+    height: 1000px;
+    background: url(/images/logo.svg);
+    /*background-size: 100px 82px;*/
+  }
