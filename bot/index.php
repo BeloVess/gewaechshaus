@@ -1,6 +1,6 @@
 <?php 
 $update = json_decode(file_get_contents("php://input"), TRUE);
-#error_log(print_r($update, TRUE));
+#file_put_contents("request.log", print_r($update, TRUE));
 
 # TODO: check password from gitlab
 
